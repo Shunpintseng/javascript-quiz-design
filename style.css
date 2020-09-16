@@ -1,11 +1,4 @@
-nav{
-    !align-items: flex-end;
-}
-body{
-    align-items: center;
-    margin: auto;
+.container {
+    margin-top: 20%;
 }
 
-/* #start{
-    align-content: center;
-} */
