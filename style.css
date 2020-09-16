@@ -1,0 +1,11 @@
+nav{
+    !align-items: flex-end;
+}
+body{
+    align-items: center;
+    margin: auto;
+}
+
+/* #start{
+    align-content: center;
+} */
