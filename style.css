@@ -31,6 +31,7 @@ nav{
     margin-right:20%;
 }
 
+
 .choice{
     
     align-content: center;
@@ -43,4 +44,6 @@ button{
     margin: 3px;
 }
 
-
+#initial{
+    margin-right:20%!
+}

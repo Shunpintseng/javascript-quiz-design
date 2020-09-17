@@ -1,23 +1,11 @@
-// create start page with "start" button to kick off timer and start first quiz question
-
-// step one set up timeer 
-
-// create quiz qustions and answer options with button
-
-// log user's answer for each question and provide true or false comment
-
-// if false - reduce timer by 5 secs
-
-// when timer runs out or all questions are answered, prompt to page for user initial and score to local storage
-
-// set variables, I started with DOM method before learn about Jquery but can change in next revision 
+// set variables 
 var timeEl = document.getElementById("timer");
 var timeLeft = 60; //total test time 60 seconds
 var start = document.getElementById("start"); //assign var to start button
 start.addEventListener ("click", startCountDown) //add click event to kick off startCountDown function
 var timeInterval
 
-//Add function to start the count down after "start" button is clicked 
+//Here is the function to start the count down after "start" button is clicked and prompt to first question
 function startCountDown(){
 timeInterval = setInterval(countDown,1000);
 countDown()
@@ -30,7 +18,7 @@ question1();
 }
 
 
-
+//Setting the timer once the start button is clicked
 function countDown(){
           timeEl.textContent = "Quiz end in " + timeLeft + " seconds"
         if(timeLeft === 0){
@@ -43,8 +31,7 @@ function sendMessage(){
     alert ("Time is Up")
 }
 
-//setting up variables and functions for quizs and answers
-
+//setting up variables and functions for quizs and answers, jquery is not used. Will implement for next update.
 var questionSection = document.getElementById("quiz");
 var answerChoices = document.getElementById("choices");
 var answerBtns = document.querySelectorAll(".btn-secondary");
@@ -53,7 +40,7 @@ var answer;
 var testResult = document.getElementById('testResult')
 
 
-
+// Set function for each question. The answer are included for the checking answer function
 function question1 (){
     questionSection.textContent = "Inside which HTML element do we put the JavaScript?";
     answerBtns[0].textContent = "A. <script>";
@@ -93,7 +80,8 @@ function question4 (){
 }
 
 
-//
+//each multiple choice options have a eventlistener and check the user answer aganist the correct answer
+
 answerBtns[0].addEventListener("click",function(){
     checkAnswer(answer === 0)
 })
@@ -107,10 +95,12 @@ answerBtns[3].addEventListener("click",function(){
     checkAnswer(answer === 3)
 })
 
+//set the variables for counting correct/ wrong answers
 var numCorrectAns=0;
 var numWrongAns=0;
 var currentQues;
 
+//this function is showing the user if they are correct or wrong for each question. In the wront condition, the clock is deducted by 10 sec
 function checkAnswer(isItCorrect){
     if(isItCorrect === true){
         answerSection.textContent = "Correct!"
@@ -118,9 +108,10 @@ function checkAnswer(isItCorrect){
     }else{
         answerSection.textContent = "Wrong!"
         numWrongAns++
-    }
+        timeLeft=timeLeft-10
+        }
     currentQues++
-
+//loop through each questions until the end and prompt alert and show the score form
     if (currentQues===1){
         question1 ()    
     }
@@ -139,7 +130,7 @@ function checkAnswer(isItCorrect){
         showScore()
     }  
 }
-
+// form for user input and score %
 var form =  document.querySelector(".form")
 
 function showScore(){
