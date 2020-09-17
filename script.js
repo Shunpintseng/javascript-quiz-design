@@ -24,11 +24,14 @@ function countDown(){
         if(timeLeft === 0){
             clearInterval(timeInterval);
             sendMessage();
+            timeLeft = 60;
+            startCountDown();
         }
         timeLeft--;
     }
 function sendMessage(){
     alert ("Time is Up")
+    
 }
 
 //setting up variables and functions for quizs and answers, jquery is not used. Will implement for next update.
@@ -42,7 +45,7 @@ var testResult = document.getElementById('testResult')
 
 // Set function for each question. The answer are included for the checking answer function
 function question1 (){
-    questionSection.textContent = "Inside which HTML element do we put the JavaScript?";
+    questionSection.textContent = "Q1: Inside which HTML element do we put the JavaScript?";
     answerBtns[0].textContent = "A. <script>";
     answerBtns[1].textContent = "B. <javascript>";
     answerBtns[2].textContent = "C. <js>";
@@ -53,7 +56,7 @@ function question1 (){
 }
 
 function question2 (){
-    questionSection.textContent = "Where is the correct place to insert a JavaScript?";
+    questionSection.textContent = "Q2: Where is the correct place to insert a JavaScript?";
     answerBtns[0].textContent = "A. The <head> section";
     answerBtns[1].textContent = "B. The <body> section";
     answerBtns[2].textContent = "C. The <title> section";
@@ -62,7 +65,7 @@ function question2 (){
 }
 
 function question3 (){
-    questionSection.textContent = 'What is the correct syntax for referring to an external script called "xxx.js"?';
+    questionSection.textContent = 'Q3: What is the correct syntax for referring to an external script called "xxx.js"?';
     answerBtns[0].textContent = 'A. <script name="xxx.js">';
     answerBtns[1].textContent = 'B. <script src="xxx.js">';
     answerBtns[2].textContent = 'C. <script href="xxx.js">';
@@ -71,7 +74,7 @@ function question3 (){
 }
 
 function question4 (){
-    questionSection.textContent = "How do you write 'Hello World' in an alert box?";
+    questionSection.textContent = "Q4: How do you write 'Hello World' in an alert box?";
     answerBtns[0].textContent = 'A. msg("Hello World")';
     answerBtns[1].textContent = 'B. msgBox("Hello World")';
     answerBtns[2].textContent = 'C. alertBox("Hello World")';

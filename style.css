@@ -1,11 +1,14 @@
 
 nav{
-    text-align: center;
+    /* text-align: center; */
     background-color: lightsteelblue;
     margin-top: 0;
     padding: 2%;
 }
 
+.title{
+    margin-left: 30%;
+}
 
 .timer{
     text-align: right;
@@ -13,7 +16,7 @@ nav{
 
 .startbtn{ 
     text-align: center;
-    margin-top: 20%;  
+    margin-top: 10%;  
    
 }
 
