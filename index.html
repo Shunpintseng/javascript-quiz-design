@@ -9,47 +9,55 @@
     <link rel="stylesheet" href="style.css">
 
     <title>Javascript Quiz</title>
-</head>
-
-<div class="d-flex justify-content-end">
-    <h1 class="time"></h1>
-    <div id="main"></div>
+</head><!-- <nav> set timer location -->
+<nav>
+<div class="timer">
+    <h6 id="timer"></h6>
 </div>
 
-<body class="container h-100">
+<h2>Welcome to Javascript Quiz!</h2>
+</nav>
 
-    <div class="row h-100 justify-content-center">
+<body>
+    <!-- set start btn location -->
+    <div class="startbtn">
+        <button id="start">Start Quiz!</button>
+    </div>
 
-       <tb class="align-middle"><button id="start">Start Quiz!</button></tb> 
+    <div class="question">
+        <section id="quiz" style="display: none;" text-align="center"></section>
+    </div>
 
-        <section id="quiz" style="display: none;">
-            <H2 id="questions">QUESTION XJIFJIEIJIF</H2>
-        </section>
-
+    <div class="choice">
         <section id="choices" style="display: none;">
-            <div class="btn-group-vertical" role="group" aria-label="Basic example">
+            
+            <article class="btn-group-vertical" role="group" aria-label="Basic example">
+           
                 <button type="button" class="btn btn-secondary" id="a">A.</button>
+              
                 <button type="button" class="btn btn-secondary" id="b">B</button>
+                
                 <button type="button" class="btn btn-secondary" id="c">C</button>
+
                 <button type="button" class="btn btn-secondary" id="d">D</button>
-            </div>
+                
+            </article>
         </section>
 
-        <section id="answer"></section>
+        <section id="answer" style="display:none"></section>
 
         <section class="form" style="display: none;">
             <form>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Enter Your initial</label>
-                  <input type="text" class="form-control">
-                 
+                    <label for="exampleInputEmail1">Enter Your initial</label>
+                    <input type="text" class="form-control">
+                
+                <span id="testResult" style="display: none;"></span>
                 </div>
-                          
+
                 <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
+            </form>
         </section>
-
-
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
